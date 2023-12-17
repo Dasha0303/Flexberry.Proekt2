@@ -22,13 +22,13 @@ export default Controller.extend({
             link: 'i-i-s-proekt2-оценка-l',
             caption: i18n.t('forms.application.sitemap.оценка.i-i-s-proekt2-оценка-l.caption'),
             title: i18n.t('forms.application.sitemap.оценка.i-i-s-proekt2-оценка-l.title'),
-            icon: 'table',
+            icon: 'briefcase',
             children: null
           }, {
             link: 'i-i-s-proekt2-отчёт-об-оценке-l',
             caption: i18n.t('forms.application.sitemap.оценка.i-i-s-proekt2-отчёт-об-оценке-l.caption'),
             title: i18n.t('forms.application.sitemap.оценка.i-i-s-proekt2-отчёт-об-оценке-l.title'),
-            icon: 'suitcase',
+            icon: 'archive',
             children: null
           }]
         }, {
@@ -40,7 +40,7 @@ export default Controller.extend({
             link: 'i-i-s-proekt2-увольнение-l',
             caption: i18n.t('forms.application.sitemap.увольнение.i-i-s-proekt2-увольнение-l.caption'),
             title: i18n.t('forms.application.sitemap.увольнение.i-i-s-proekt2-увольнение-l.title'),
-            icon: 'chart bar',
+            icon: 'calendar',
             children: null
           }]
         }, {
@@ -52,7 +52,7 @@ export default Controller.extend({
             link: 'i-i-s-proekt2-сотрудники-l',
             caption: i18n.t('forms.application.sitemap.сотрудники.i-i-s-proekt2-сотрудники-l.caption'),
             title: i18n.t('forms.application.sitemap.сотрудники.i-i-s-proekt2-сотрудники-l.title'),
-            icon: 'edit',
+            icon: 'suitcase',
             children: null
           }]
         }
