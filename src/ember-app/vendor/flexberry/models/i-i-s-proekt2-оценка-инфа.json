@@ -1,0 +1,123 @@
+﻿{
+  "name": "IISProekt2ОценкаИнфа",
+  "modelName": "i-i-s-proekt2-оценка-инфа",
+  "className": "ОценкаИнфа",
+  "nameSpace": "IIS.Proekt2",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "номер",
+      "type": "number",
+      "flexberryType": "int",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "оценка",
+      "relatedTo": "i-i-s-proekt2-оценка",
+      "inverse": null
+    },
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "сотрудники",
+      "relatedTo": "i-i-s-proekt2-сотрудники",
+      "inverse": null
+    },
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "отчётОбОценке",
+      "relatedTo": "i-i-s-proekt2-отчёт-об-оценке",
+      "inverse": "оценкаИнфа"
+    }
+  ],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "ОценкаИнфаE",
+      "modelName": "i-i-s-proekt2-оценка-инфа",
+      "attrs": [
+        {
+          "name": "номер",
+          "caption": "Номер",
+          "hidden": false,
+          "index": 0
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": "ФИО",
+          "lookupValueField": "фИО",
+          "relationName": "Сотрудники",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "фИО",
+              "caption": "ФИО",
+              "hidden": true,
+              "index": 2
+            },
+            {
+              "name": "должность",
+              "caption": "Должность",
+              "hidden": false,
+              "index": 3
+            }
+          ],
+          "index": 1,
+          "type": "standard",
+          "caption": "Сотрудники",
+          "name": "сотрудники",
+          "relatedTo": "i-i-s-proekt2-сотрудники",
+          "inverse": null
+        },
+        {
+          "lookupValue": "Комментарий",
+          "lookupValueField": "комментарий",
+          "relationName": "Оценка",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "датаПроведения",
+              "caption": "Дата проведения",
+              "hidden": false,
+              "index": 5
+            },
+            {
+              "name": "статус",
+              "caption": "Статус",
+              "hidden": false,
+              "index": 6
+            },
+            {
+              "name": "комментарий",
+              "caption": "Комментарий",
+              "hidden": true,
+              "index": 7
+            }
+          ],
+          "index": 4,
+          "type": "standard",
+          "caption": "Оценка",
+          "name": "оценка",
+          "relatedTo": "i-i-s-proekt2-оценка",
+          "inverse": null
+        }
+      ],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

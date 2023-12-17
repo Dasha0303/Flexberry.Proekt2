@@ -1,0 +1,139 @@
+﻿{
+  "name": "IISProekt2Увольнение",
+  "modelName": "i-i-s-proekt2-увольнение",
+  "className": "Увольнение",
+  "nameSpace": "IIS.Proekt2",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "датаУвольнения",
+      "type": "date",
+      "flexberryType": "DateTime",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    },
+    {
+      "name": "причина",
+      "type": "i-i-s-proekt2-причины",
+      "flexberryType": "Причины",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "сотрудники",
+      "relatedTo": "i-i-s-proekt2-сотрудники",
+      "inverse": null
+    }
+  ],
+  "hasMany": [],
+  "projections": [
+    {
+      "name": "УвольнениеE",
+      "modelName": "i-i-s-proekt2-увольнение",
+      "attrs": [
+        {
+          "name": "датаУвольнения",
+          "caption": "Дата увольнения",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "причина",
+          "caption": "Причина",
+          "hidden": false,
+          "index": 5
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": "ФИО",
+          "lookupValueField": "фИО",
+          "relationName": "Сотрудники",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "фИО",
+              "caption": "ФИО",
+              "hidden": true,
+              "index": 2
+            },
+            {
+              "name": "должность",
+              "caption": "Должность",
+              "hidden": false,
+              "index": 3
+            },
+            {
+              "name": "ранг",
+              "caption": "Ранг",
+              "hidden": false,
+              "index": 4
+            }
+          ],
+          "index": 1,
+          "type": "standard",
+          "caption": "Сотрудники",
+          "name": "сотрудники",
+          "relatedTo": "i-i-s-proekt2-сотрудники",
+          "inverse": null
+        }
+      ],
+      "hasMany": []
+    },
+    {
+      "name": "УвольнениеL",
+      "modelName": "i-i-s-proekt2-увольнение",
+      "attrs": [
+        {
+          "name": "датаУвольнения",
+          "caption": "Дата увольнения",
+          "hidden": false,
+          "index": 0
+        },
+        {
+          "name": "причина",
+          "caption": "Причина",
+          "hidden": false,
+          "index": 2
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "Сотрудники",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "фИО",
+              "caption": "ФИО",
+              "hidden": false,
+              "index": 1
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "ФИО",
+          "name": "сотрудники",
+          "relatedTo": "i-i-s-proekt2-сотрудники",
+          "inverse": null
+        }
+      ],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}

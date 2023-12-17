@@ -1,0 +1,15 @@
+﻿{
+  "newForm": "i-i-s-proekt2-оценка-e",
+  "editForm": "i-i-s-proekt2-оценка-e",
+  "external": false,
+  "caption": "Оценка",
+  "name": "IISProekt2ОценкаL",
+  "className": "ОценкаL",
+  "attrs": [],
+  "projections": [
+    {
+      "modelName": "i-i-s-proekt2-оценка",
+      "modelProjection": "ОценкаL"
+    }
+  ]
+}

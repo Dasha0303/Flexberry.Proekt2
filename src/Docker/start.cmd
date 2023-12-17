@@ -1,0 +1,1 @@
+docker-compose -p proekt2 up -d

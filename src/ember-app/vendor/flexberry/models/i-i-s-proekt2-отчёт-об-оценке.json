@@ -1,0 +1,132 @@
+﻿{
+  "name": "IISProekt2ОтчётОбОценке",
+  "modelName": "i-i-s-proekt2-отчёт-об-оценке",
+  "className": "ОтчётОбОценке",
+  "nameSpace": "IIS.Proekt2",
+  "parentModelName": null,
+  "parentClassName": null,
+  "attrs": [
+    {
+      "name": "датаОтчёта",
+      "type": "date",
+      "flexberryType": "DateTime",
+      "notNull": false,
+      "defaultValue": "",
+      "stored": true,
+      "ordered": false
+    }
+  ],
+  "belongsTo": [
+    {
+      "polymorphic": false,
+      "presence": true,
+      "name": "сотрудники",
+      "relatedTo": "i-i-s-proekt2-сотрудники",
+      "inverse": null
+    }
+  ],
+  "hasMany": [
+    {
+      "name": "оценкаИнфа",
+      "relatedTo": "i-i-s-proekt2-оценка-инфа",
+      "inverse": "отчётОбОценке"
+    }
+  ],
+  "projections": [
+    {
+      "name": "ОтчётОбОценкеE",
+      "modelName": "i-i-s-proekt2-отчёт-об-оценке",
+      "attrs": [
+        {
+          "name": "датаОтчёта",
+          "caption": "Дата отчёта",
+          "hidden": false,
+          "index": 0
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": "ФИО",
+          "lookupValueField": "фИО",
+          "relationName": "Сотрудники",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "фИО",
+              "caption": "ФИО",
+              "hidden": true,
+              "index": 2
+            },
+            {
+              "name": "должность",
+              "caption": "Должность",
+              "hidden": false,
+              "index": 3
+            }
+          ],
+          "index": 1,
+          "type": "standard",
+          "caption": "Сотрудники",
+          "name": "сотрудники",
+          "relatedTo": "i-i-s-proekt2-сотрудники",
+          "inverse": null
+        }
+      ],
+      "hasMany": [
+        {
+          "projectionName": "ОценкаИнфаE",
+          "caption": "Оценка инфа",
+          "name": "оценкаИнфа",
+          "relatedTo": "i-i-s-proekt2-оценка-инфа",
+          "inverse": null
+        }
+      ]
+    },
+    {
+      "name": "ОтчётОбОценкеL",
+      "modelName": "i-i-s-proekt2-отчёт-об-оценке",
+      "attrs": [
+        {
+          "name": "датаОтчёта",
+          "caption": "Дата отчёта",
+          "hidden": false,
+          "index": 0
+        }
+      ],
+      "belongsTo": [
+        {
+          "lookupValue": null,
+          "lookupValueField": null,
+          "relationName": "Сотрудники",
+          "belongsTo": [],
+          "hidden": false,
+          "attrs": [
+            {
+              "name": "фИО",
+              "caption": "ФИО",
+              "hidden": false,
+              "index": 1
+            },
+            {
+              "name": "должность",
+              "caption": "Должность",
+              "hidden": false,
+              "index": 2
+            }
+          ],
+          "index": -1,
+          "type": "default",
+          "caption": "ФИО",
+          "name": "сотрудники",
+          "relatedTo": "i-i-s-proekt2-сотрудники",
+          "inverse": null
+        }
+      ],
+      "hasMany": []
+    }
+  ],
+  "stored": true,
+  "offline": true,
+  "external": false
+}
